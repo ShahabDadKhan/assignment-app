@@ -1,28 +1,36 @@
+<!-- src/views/Auth.vue -->
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <button @click="showModal('login')">Login</button>
+    <button @click="showModal('signup')">Signup</button> -->
+    <router-view />
+    <!-- 
+    <Modal :isVisible="isModalVisible" @close="isModalVisible = false">
+      <component :is="currentComponent"></component>
+    </Modal> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Modal from "@/components/Modal.vue";
+import Login from "@/components/Login.vue";
+import Signup from "@/components/Signup.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Modal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      currentComponent: null,
+    };
+  },
+  methods: {
+    showModal(type) {
+      this.currentComponent = type === "login" ? Login : Signup;
+      this.isModalVisible = true;
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

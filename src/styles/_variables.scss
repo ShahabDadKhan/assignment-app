@@ -1,0 +1,14 @@
+// src/styles/variables.less
+$small: 12px;
+$bg: #131319;
+$primary: #4a95fe;
+$secondary: #2ecc71;
+$tertiary: #4a95fe;
+$white: #fff;
+
+// My mixins
+@mixin display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
