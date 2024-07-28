@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../components/Home.vue";
+import Home from "../pages/Home.vue";
+import Timeline from "../pages/Timeline.vue";
 import SignIn from "../components/Signup.vue"; // Make sure to import the SignIn component
 
 Vue.use(VueRouter);
@@ -12,7 +13,14 @@ const routes = [
     component: Home,
     meta: {
       title: "Home",
-      footer: true,
+    },
+  },
+  {
+    path: "/timeline",
+    name: "Timeline",
+    component: Timeline,
+    meta: {
+      title: "TimeLine",
     },
   },
   {
@@ -35,7 +43,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} | Portfolio `;
+  document.title = `${to.meta.title} `;
   next();
 });
 

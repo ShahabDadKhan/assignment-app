@@ -1,7 +1,12 @@
 <template>
   <div class="modal-componentDiv">
     <Modal :isVisible="true">
-      <img class="logo" src="../assets/logo.svg" alt="Logo image" />
+      <img
+        v-if="isLogin"
+        class="logo"
+        src="../assets/logo.svg"
+        alt="Logo image"
+      />
       <Login v-if="isLogin" @toggleSinup="switchScreen" />
       <Signup v-else @toggleLogin="switchScreen" />
     </Modal>
@@ -10,7 +15,7 @@
 
 <script>
 import Login from "../components/Login.vue";
-import Modal from "./base/Modal.vue";
+import Modal from "../components/base/Modal.vue";
 import Signup from "../components/Signup.vue";
 export default {
   name: "Home",
@@ -20,7 +25,7 @@ export default {
   },
   data() {
     return {
-      isLogin: false,
+      isLogin: true,
     };
   },
   methods: {

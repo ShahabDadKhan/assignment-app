@@ -27,21 +27,27 @@
           src="../assets/eye.svg"
           @click="togglePasswordVisibility"
         />
-        <!-- <i :class="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i> -->
-        <!-- </span> -->
       </div>
     </div>
-    <AppButton class="login-btn" :width="'100%'" :height="'43px'">
+    <AppButton
+      @click="handleSubmit"
+      class="login-btn"
+      :width="'100%'"
+      :height="'43px'"
+    >
       Login Now
     </AppButton>
-    <div class="register-text">Not registered yet? <span> Register</span></div>
+    <div class="register-text">
+      Not registered yet? <span @click="toggleSinup"> Register</span>
+    </div>
   </form>
 </template>
 
 <script>
-import AppButton from "./AppButton.vue";
+import AppButton from "./base/AppButton.vue";
 export default {
   components: { AppButton },
+  props: ["modalType"],
   data() {
     return {
       email: "",
@@ -53,9 +59,15 @@ export default {
     togglePasswordVisibility() {
       this.isPasswordVisible = !this.isPasswordVisible;
     },
+    toggleSinup() {
+      this.$emit("toggleSinup");
+    },
     handleSubmit() {
-      // Handle login logic here
-      console.log("Login with", this.email, this.password);
+      if (this.modalType == "close") {
+        this.$emit("closeModal");
+      } else {
+        this.$router.push("/timeline");
+      }
     },
   },
 };
@@ -102,6 +114,10 @@ input {
   span {
     color: $white;
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     &::after {
       content: "→";

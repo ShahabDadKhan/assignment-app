@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: 43,
+      default: "43",
     },
   },
   computed: {
@@ -46,6 +46,7 @@ export default {
 .appButton {
   font-size: 16px;
   border-radius: 4px;
+  height: 43px;
   border: none;
   color: $white;
 

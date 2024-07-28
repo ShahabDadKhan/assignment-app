@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Theresa Webb",
+    "pic": "profile1.png",
+    "comment": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "emoji": "emoji-profile1.png",
+    "reply": "24",
+    "time": "5 mins",
+    "edited": false
+  },
+  {
+    "id": 2,
+    "name": "Marvin McKinney",
+    "pic": "profile2.png",
+    "comment": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "emoji": "emoji-profile2.png",
+    "reply": "17",
+    "time": "8 mis",
+    "edited": true
+  }
+]

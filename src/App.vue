@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Modal from "@/components/Modal.vue";
+import Modal from "@/components/base/Modal.vue";
 import Login from "@/components/Login.vue";
 import Signup from "@/components/Signup.vue";
 

@@ -1,8 +1,14 @@
 <!-- src/components/Modal.vue -->
 <template>
-  <div v-if="isVisible" class="modal-overlay" @click="closeModal">
+  <div
+    v-if="isVisible"
+    :class="{ 'modal-overlay': true, 'modal-overlay-active': isVisible }"
+    @click="closeModal"
+  >
     <div class="modal-content" @click.stop>
-      <!-- <button class="close-button" @click="closeModal">x</button> -->
+      <button v-if="showCloseBtn" class="close-button" @click="closeModal">
+        x
+      </button>
       <slot></slot>
     </div>
   </div>
@@ -14,6 +20,10 @@ export default {
     isVisible: {
       type: Boolean,
       required: true,
+    },
+    showCloseBtn: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
@@ -35,6 +45,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(0px);
+  transition: all 2s ease-in-out;
+}
+.modal-overlay-active {
+  backdrop-filter: blur(2px);
 }
 .modal-content {
   background: #27292d;
@@ -43,7 +58,6 @@ export default {
   border: 1px solid #959595;
   position: relative;
   min-width: 463px;
-  min-height: 420px;
 }
 .close-button {
   position: absolute;
@@ -53,5 +67,10 @@ export default {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  background: #131319;
+  border-radius: 50%;
+  color: white;
+  height: 35px;
+  width: 35px;
 }
 </style>
