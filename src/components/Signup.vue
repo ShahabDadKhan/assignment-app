@@ -1,6 +1,6 @@
 <!-- src/components/LoginForm.vue -->
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form>
     <h3>SIGN UP</h3>
     <h2>Create an account to continue</h2>
     <div class="email-container">
@@ -67,11 +67,15 @@ export default {
       this.$emit("toggleLogin");
     },
     handleSubmit() {
+      event.preventDefault();
       if (this.modalType == "close") {
         this.$emit("closeModal");
       } else {
         this.$router.push("/timeline");
       }
+      this.email = "";
+      this.username = "";
+      this.password = "";
     },
   },
 };

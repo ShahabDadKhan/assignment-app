@@ -1,17 +1,28 @@
 <!-- src/components/Modal.vue -->
 <template>
-  <div
-    v-if="isVisible"
-    :class="{ 'modal-overlay': true, 'modal-overlay-active': isVisible }"
-    @click="closeModal"
-  >
-    <div class="modal-content" @click.stop>
-      <button v-if="showCloseBtn" class="close-button" @click="closeModal">
-        x
-      </button>
-      <slot></slot>
+  <transition name="modal-fade">
+    <div
+      v-show="isVisible"
+      :class="{
+        'modal-overlay': true,
+        'modal-overlay-active': isVisible,
+      }"
+      @click="closeModal"
+    >
+      <transition name="modal-content-fade">
+        <div
+          v-show="isVisible"
+          :class="{ 'modal-content': true, 'modal-content-active': isVisible }"
+          @click.stop
+        >
+          <button v-if="showCloseBtn" class="close-button" @click="closeModal">
+            x
+          </button>
+          <slot></slot>
+        </div>
+      </transition>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -45,12 +56,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all ease-in-out;
   backdrop-filter: blur(0px);
-  transition: all 2s ease-in-out;
+  opacity: 0;
 }
 .modal-overlay-active {
   backdrop-filter: blur(2px);
+  opacity: 1;
 }
+
 .modal-content {
   background: $bg-primary;
   padding: 30px;
@@ -58,6 +72,13 @@ export default {
   border: 1px solid #959595;
   position: relative;
   min-width: 463px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all ease-in-out;
+}
+.modal-content-active {
+  opacity: 1;
+  transform: scale(1);
 }
 @media (max-width: 768px) {
   .modal-content {
@@ -77,5 +98,23 @@ export default {
   color: $white;
   height: 35px;
   width: 35px;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+.modal-fade-enter,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-content-fade-enter-active,
+.modal-content-fade-leave-active {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.modal-content-fade-enter, .modal-content-fade-leave-to /* .modal-content-fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+  transform: scale(0.8);
 }
 </style>
