@@ -61,6 +61,11 @@ export default {
 .inner-container {
   max-width: 50%;
 }
+@media (max-width: 768px) {
+  .inner-container {
+    max-width: 100%;
+  }
+}
 h2 {
   font-size: $xxl + 4px; // Just adding +4 to xxl, don't need to create a new variable just to use it at one place.
   line-height: 33px;

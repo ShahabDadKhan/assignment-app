@@ -102,9 +102,15 @@ h2 {
 }
 .edited {
   position: relative;
+  margin-left: 20px;
+
   &::before {
-    content: ".";
+    content: "•";
     position: absolute;
+    font-weight: bold;
+    font-size: $xl;
+    top: -3px;
+    left: -13px;
   }
 }
 .profile-container {

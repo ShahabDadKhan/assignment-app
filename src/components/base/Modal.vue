@@ -59,6 +59,11 @@ export default {
   position: relative;
   min-width: 463px;
 }
+@media (max-width: 768px) {
+  .modal-content {
+    min-width: 80%;
+  }
+}
 .close-button {
   position: absolute;
   top: 10px;
