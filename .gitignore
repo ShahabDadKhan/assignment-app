@@ -7,6 +7,8 @@ package-lock.json
 # Firebase cache and output
 # .firebase/
 # .firebaserc
+firebase.js
+
 
 
 # local env files
