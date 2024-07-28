@@ -102,7 +102,7 @@ export default {
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .modal-fade-enter,
 .modal-fade-leave-to {
@@ -111,9 +111,10 @@ export default {
 
 .modal-content-fade-enter-active,
 .modal-content-fade-leave-active {
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.modal-content-fade-enter, .modal-content-fade-leave-to /* .modal-content-fade-leave-active in <2.1.8 */ {
+.modal-content-fade-enter,
+.modal-content-fade-leave-to {
   opacity: 0;
   transform: scale(0.8);
 }
