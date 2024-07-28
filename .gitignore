@@ -4,6 +4,10 @@ node_modules
 
 package-lock.json
 
+# Firebase cache and output
+# .firebase/
+# .firebaserc
+
 
 # local env files
 .env.local
