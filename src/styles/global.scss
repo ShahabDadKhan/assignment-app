@@ -1,14 +1,7 @@
-// src/styles/global.less
-@import "./_variables.scss";
 body {
   font-size: $small;
   color: $primary;
-  background-color: $bg;
-}
-
-h1 {
-  font-size: 2em;
-  color: $secondary;
+  background-color: $bg-secondary;
 }
 
 #app {

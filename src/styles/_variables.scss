@@ -1,12 +1,25 @@
-// src/styles/variables.less
-$small: 12px;
-$bg: #131319;
-$primary: #4a95fe;
-$secondary: #2ecc71;
-$tertiary: #4a95fe;
-$white: #fff;
+// font-sizes for global use
+$xs: 12px;
+$small: 14px;
+$medium: 16px;
+$large: 18px;
+$xl: 20px;
+$xxl: 24px;
 
-// My mixins
+// color code for global use
+$bg-primary: #27292d;
+$bg-secondary: #131319;
+
+$primary: #7f8084;
+$secondary: #c5c7ca;
+$tertiary: #6b6c70;
+
+$white: #fff;
+$black: black;
+
+$border-primary: #35373b;
+
+// My mixin for global use
 @mixin display-flex {
   display: flex;
   justify-content: space-between;

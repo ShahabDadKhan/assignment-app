@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../pages/Home.vue";
 import Timeline from "../pages/Timeline.vue";
-import SignIn from "../components/Signup.vue"; // Make sure to import the SignIn component
 
 Vue.use(VueRouter);
 
@@ -21,15 +20,6 @@ const routes = [
     component: Timeline,
     meta: {
       title: "TimeLine",
-    },
-  },
-  {
-    path: "/signin",
-    name: "SignIn",
-    component: SignIn,
-    meta: {
-      title: "Sign In",
-      footer: false,
     },
   },
 ];

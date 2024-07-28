@@ -75,41 +75,41 @@ export default {
 
 <style lang="scss" scoped>
 h3 {
-  color: #6b6c70;
+  font-size: $small;
+  color: $tertiary;
   text-align: center;
-  font-size: 14px;
 }
 h2 {
+  font-size: $large;
   color: $white;
   text-align: center;
-  font-size: 18px;
 }
 label {
+  font-size: $small;
   line-height: 16px;
   font-weight: 500;
-  font-size: 14px;
-  color: #c5c7ca;
+  color: $secondary;
   margin: 20px 0px 10px 0px;
 }
 input {
   width: -webkit-fill-available;
   height: 43px;
-  border: 1.5px solid #35373b;
+  border: 1.5px solid $border-primary;
   border-radius: 4px;
-  background: #27292d;
+  background: $bg-primary;
   padding: 0px 18px;
-  color: #7f8084;
+  color: $primary;
 
   &::placeholder {
-    color: #7f8084;
-    font-size: 16px;
+    font-size: $medium;
+    color: $primary;
     font-weight: 400;
   }
 }
 
 .register-text {
-  color: #7f8084;
-  font-size: 14px;
+  font-size: $small;
+  color: $primary;
 
   span {
     color: $white;
@@ -121,8 +121,8 @@ input {
 
     &::after {
       content: "→";
+      font-size: $xxl;
       position: absolute;
-      font-size: 24px;
       top: -9px;
     }
   }
@@ -134,23 +134,24 @@ input {
 .email-container {
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
 }
 .password-container {
   display: flex;
   flex-direction: column;
-  // color: $white;
 }
 .password-labelContainer {
   @include display-flex;
 
   span {
-    color: #c5c7ca;
-    font-size: 12px;
+    font-size: $xs;
+    color: $secondary;
     font-weight: 500;
     line-height: 14px;
     letter-spacing: 0.2px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

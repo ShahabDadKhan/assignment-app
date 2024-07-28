@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .appButton {
-  font-size: 16px;
+  font-size: $medium;
   border-radius: 4px;
   height: 43px;
   border: none;
@@ -66,5 +66,4 @@ export default {
 .btn-secondary {
   background-color: #6c757d;
 }
-/* Add more styles as needed */
 </style>

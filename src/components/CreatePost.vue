@@ -33,22 +33,22 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 2px solid #35373b;
-  background: #27292d;
+  border: 2px solid $border-primary;
+  background: $bg-primary;
   border-radius: 10px;
 }
 .comment-container {
   @include display-flex;
   justify-content: flex-start;
-  background: #131319;
+  background: $bg-secondary;
   padding: 15px;
   border-radius: 10px;
 }
 input {
-  font-size: 16px;
+  font-size: $medium;
   line-height: 18px;
   margin-left: 15px;
-  color: #7f8084;
+  color: $primary;
   background: transparent;
   border: none;
   width: 100%;
@@ -64,8 +64,8 @@ input {
   margin-left: auto;
 }
 h2 {
-  font-size: 18px;
+  font-size: $large;
   line-height: 21px;
-  color: #c5c7ca;
+  color: $secondary;
 }
 </style>

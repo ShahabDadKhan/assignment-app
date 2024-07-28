@@ -45,8 +45,4 @@ export default {
   top: -15%;
   left: 47%;
 }
-.hello {
-  font-size: $small;
-  color: black;
-}
 </style>

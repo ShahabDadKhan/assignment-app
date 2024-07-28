@@ -12,13 +12,12 @@
       <input
         placeholder="Choose a prefered username"
         type="email"
-        v-model="email"
+        v-model="username"
       />
     </div>
     <div class="password-container">
       <div class="password-labelContainer">
         <label for="password">Password</label>
-        <!-- <span>Forgot password ?</span> -->
       </div>
       <div class="password-inputContainer">
         <input
@@ -31,8 +30,6 @@
           src="../assets/eye.svg"
           @click="togglePasswordVisibility"
         />
-        <!-- <i :class="isPasswordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i> -->
-        <!-- </span> -->
       </div>
     </div>
     <AppButton
@@ -57,6 +54,7 @@ export default {
   data() {
     return {
       email: "",
+      username: "",
       password: "",
       isPasswordVisible: false,
     };
@@ -81,41 +79,41 @@ export default {
 
 <style lang="scss" scoped>
 h3 {
-  color: #6b6c70;
+  font-size: $small;
+  color: $tertiary;
   text-align: center;
-  font-size: 14px;
 }
 h2 {
+  font-size: $large;
   color: $white;
   text-align: center;
-  font-size: 18px;
 }
 label {
+  font-size: $small;
   line-height: 16px;
   font-weight: 500;
-  font-size: 14px;
-  color: #c5c7ca;
+  color: $secondary;
   margin: 20px 0px 10px 0px;
 }
 input {
   width: -webkit-fill-available;
   height: 43px;
-  border: 1.5px solid #35373b;
+  border: 1.5px solid $border-primary;
   border-radius: 4px;
-  background: #27292d;
+  background: $bg-primary;
   padding: 0px 18px;
-  color: #7f8084;
+  color: $primary;
 
   &::placeholder {
-    color: #7f8084;
-    font-size: 16px;
+    font-size: $medium;
+    color: $primary;
     font-weight: 400;
   }
 }
 
 .register-text {
-  color: #7f8084;
-  font-size: 14px;
+  font-size: $small;
+  color: $primary;
 
   span {
     color: $white;
@@ -128,8 +126,8 @@ input {
     &::after {
       content: "→";
       position: absolute;
-      font-size: 24px;
       top: -9px;
+      font-size: $xxl;
     }
   }
 }
@@ -140,24 +138,13 @@ input {
 .email-container {
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
 }
 .password-container {
   display: flex;
   flex-direction: column;
-  // color: $white;
 }
 .password-labelContainer {
   @include display-flex;
-
-  span {
-    color: #c5c7ca;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 14px;
-    letter-spacing: 0.2px;
-  }
 }
 
 .password-inputContainer {

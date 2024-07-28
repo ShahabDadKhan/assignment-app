@@ -42,6 +42,6 @@ export default {
 }
 .hello {
   font-size: $small;
-  color: black;
+  color: $black;
 }
 </style>

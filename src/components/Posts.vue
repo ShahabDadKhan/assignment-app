@@ -62,24 +62,24 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 2px solid #35373b;
-  background: #27292d;
+  border: 2px solid $border-primary;
+  background: $bg-primary;
   border-radius: 10px;
   margin: 15px 0px;
 }
 .comment-container {
   @include display-flex;
   justify-content: flex-start;
-  background: #131319;
+  background: $bg-secondary;
   padding: 15px;
   margin: 15px 0px;
   border-radius: 10px;
 }
 p {
-  font-size: 16px;
+  font-size: $medium;
   line-height: 18px;
   margin-left: 15px;
-  color: #7f8084;
+  color: $primary;
   background: transparent;
   border: none;
 }
@@ -88,17 +88,17 @@ p {
   margin-left: auto;
 }
 h2 {
-  font-size: 18px;
+  font-size: $large;
   line-height: 21px;
-  color: #c5c7ca;
+  color: $secondary;
   margin: 0px 0px 5px 0px;
 }
 .profile-bio {
   margin-left: 15px;
 }
 .postTime-div {
-  font-size: 14px;
-  color: #7f8084;
+  font-size: $small;
+  color: $primary;
 }
 .edited {
   position: relative;
@@ -115,8 +115,8 @@ h2 {
   @include display-flex;
   justify-content: flex-start;
   gap: 10px;
-  color: #7f8084;
-  font-size: 14px;
+  font-size: $small;
+  color: $primary;
   line-height: 16px;
   cursor: pointer;
 }

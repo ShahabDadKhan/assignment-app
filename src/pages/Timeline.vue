@@ -62,13 +62,13 @@ export default {
   max-width: 50%;
 }
 h2 {
-  font-size: 28px;
+  font-size: $xxl + 4px; // Just adding +4 to xxl, don't need to create a new variable just to use it at one place.
   line-height: 33px;
-  color: #c5c7ca;
+  color: $secondary;
 }
 p {
-  font-size: 16px;
+  font-size: $medium;
   line-height: 24px;
-  color: #7f8084;
+  color: $primary;
 }
 </style>

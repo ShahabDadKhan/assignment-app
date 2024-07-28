@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ export default {
   backdrop-filter: blur(2px);
 }
 .modal-content {
-  background: #27292d;
+  background: $bg-primary;
   padding: 30px;
   border-radius: 5px;
   border: 1px solid #959595;
@@ -65,11 +65,11 @@ export default {
   right: 10px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: $xl;
   cursor: pointer;
-  background: #131319;
+  background: $bg-secondary;
   border-radius: 50%;
-  color: white;
+  color: $white;
   height: 35px;
   width: 35px;
 }
